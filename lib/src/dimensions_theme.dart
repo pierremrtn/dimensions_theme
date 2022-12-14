@@ -6,15 +6,17 @@ typedef SpaceDimensions = DoubleDimensions;
 typedef BorderWidthDimensions = DoubleDimensions;
 typedef InsetDimensions = DoubleDimensions;
 
-final SpaceDimensions _kDefaultSpaceDimensions = SpaceDimensions.from(20);
+final SpaceDimensions _kDefaultSpaceDimensions =
+    SpaceDimensions.from(medium: 20);
 
-final InsetDimensions _kDefaultInsetDimensions = InsetDimensions.from(10);
+final InsetDimensions _kDefaultInsetDimensions =
+    InsetDimensions.from(medium: 10);
 
 final RadiusDimensions _kDefaultRadiusDimensions =
-    RadiusDimensions.from(const Radius.circular(8));
+    RadiusDimensions.from(medium: const Radius.circular(8));
 
 final BorderWidthDimensions _kDefaultBorderWidthDimensions =
-    BorderWidthDimensions.from(2);
+    BorderWidthDimensions.from(medium: 2);
 
 class Dimensions extends ThemeExtension<Dimensions> {
   static Dimensions of(BuildContext context) =>
