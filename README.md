@@ -110,4 +110,4 @@ Padding(
 ```
 
 ## Contribution | Bug report | Feature request
-Please fill and issue on [github](https://github.com/Pierre2tm/dimensions_theme)
+Please fill and issue on [github](https://github.com/Pierre2tm/dimensions_theme/issues)
