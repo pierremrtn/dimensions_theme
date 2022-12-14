@@ -35,7 +35,7 @@ class OutlinedPadding extends StatelessWidget {
       child: Padding(
         padding: padding,
         child: Container(
-          color: Color.fromARGB(255, 194, 194, 194),
+          color: const Color.fromARGB(255, 194, 194, 194),
           height: 50,
           width: 50,
         ),
