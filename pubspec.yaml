@@ -1,5 +1,5 @@
 name: dimensions_theme
-description: Dimensions theme extension
+description: A theme extension to define app dimensions such as blank spaces or paddings inside your theme.
 version: 0.0.1
 
 environment:
