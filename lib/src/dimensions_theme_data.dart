@@ -71,12 +71,12 @@ U _simpleDimensionTokensResolver<T, U>(
     required T largest,
   })
       factory,
-  T? smallest,
-  T? smaller,
-  T? small,
-  T? large,
-  T? larger,
-  T? largest,
+  required T? smallest,
+  required T? smaller,
+  required T? small,
+  required T? large,
+  required T? larger,
+  required T? largest,
 }) {
   assert(() {
     return [smallest, smaller, small, medium, large, larger, largest]
@@ -113,14 +113,26 @@ class RadiusDimensions extends DimensionsData<Radius> {
     required super.largest,
   });
 
-  static RadiusDimensions from(
-    Radius medium, {
-    double factor = .2,
+  static RadiusDimensions from({
+    required Radius medium,
+    double scaleFactor = .2,
+    Radius? smallest,
+    Radius? smaller,
+    Radius? small,
+    Radius? large,
+    Radius? larger,
+    Radius? largest,
   }) =>
       _simpleDimensionTokensResolver(
         medium,
-        scaleUp: (radius) => radius * (1 + factor),
-        scaleDown: (radius) => radius * (1 - factor),
+        smallest: smallest,
+        smaller: smaller,
+        small: small,
+        large: large,
+        larger: larger,
+        largest: largest,
+        scaleUp: (radius) => radius * (1 + scaleFactor),
+        scaleDown: (radius) => radius * (1 - scaleFactor),
         factory: RadiusDimensions.new,
       );
 
@@ -151,14 +163,26 @@ class DoubleDimensions extends DimensionsData<double> {
     required super.largest,
   });
 
-  static DoubleDimensions from(
-    double medium, {
-    double factor = .2,
+  static DoubleDimensions from({
+    required double medium,
+    double? smallest,
+    double? smaller,
+    double? small,
+    double? large,
+    double? larger,
+    double? largest,
+    double scaleFactor = .2,
   }) =>
       _simpleDimensionTokensResolver(
         medium,
-        scaleUp: (radius) => radius * (1 + factor),
-        scaleDown: (radius) => radius * (1 - factor),
+        smallest: smallest,
+        smaller: smaller,
+        small: small,
+        large: large,
+        larger: larger,
+        largest: largest,
+        scaleUp: (radius) => radius * (1 + scaleFactor),
+        scaleDown: (radius) => radius * (1 - scaleFactor),
         factory: DoubleDimensions.new,
       );
 

@@ -7,9 +7,26 @@ void main() {
   runApp(
     MaterialApp(
       title: "dimensions_theme example",
-      theme: ThemeData(extensions: [
-        Dimensions(),
-      ]),
+      theme: ThemeData(
+        extensions: [
+          Dimensions(
+            spaces: SpaceDimensions(
+              largest: 55,
+              larger: 40,
+              large: 30,
+              medium: 20,
+              small: 15,
+              smaller: 10,
+              smallest: 5,
+            ),
+            insets: InsetDimensions.from(
+              large: 22,
+              medium: 20,
+              small: 18,
+            ),
+          ),
+        ],
+      ),
       home: const DimensionsThemeExample(),
     ),
   );
