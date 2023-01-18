@@ -27,16 +27,16 @@ typedef InsetDimensions = DoubleDimensions;
 typedef RadiusDimensions = DoubleDimensions;
 
 final SpaceDimensions _kDefaultSpaceDimensions =
-    SpaceDimensions.from(medium: 20);
+    SpaceDimensions.fillMissing(medium: 20);
 
 final InsetDimensions _kDefaultInsetDimensions =
-    InsetDimensions.from(medium: 10);
+    InsetDimensions.fillMissing(medium: 10);
 
 final RadiusDimensions _kDefaultRadiusDimensions =
-    RadiusDimensions.from(medium: 8);
+    RadiusDimensions.fillMissing(medium: 8);
 
 final BorderWidthDimensions _kDefaultBorderWidthDimensions =
-    BorderWidthDimensions.from(medium: 2);
+    BorderWidthDimensions.fillMissing(medium: 2);
 
 class Dimensions extends ThemeExtension<Dimensions> {
   static const smallest = DimensionToken.smallest();

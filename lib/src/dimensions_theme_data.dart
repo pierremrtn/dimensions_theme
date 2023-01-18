@@ -121,16 +121,17 @@ U _simpleDimensionTokensResolver<T, U>(
 
 class DoubleDimensions extends DimensionsThemeData<double> {
   DoubleDimensions({
-    required super.smallest,
-    required super.smaller,
-    required super.small,
-    required super.medium,
-    required super.large,
-    required super.larger,
-    required super.largest,
+    super.smallest = 0,
+    super.smaller = 0,
+    super.small = 0,
+    super.medium = 0,
+    super.large = 0,
+    super.larger = 0,
+    super.largest = 0,
   });
 
-  static DoubleDimensions from({
+  /// Fill missing dimensions based on scale factor
+  static DoubleDimensions fillMissing({
     required double medium,
     double? smallest,
     double? smaller,

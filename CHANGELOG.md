@@ -3,10 +3,12 @@
 - **Breaking**: EdgeInsetsComposer redesign:
   - You should now use EdgeInsetsOf(context) instead of EdgeInsteadComposer.of(context). EdgeInsetsOf(context) api takes advantages of new Dimension's tokens and offer an API similar to the EdgeInsets class.
 - **Breaking**: `EdgeInsets[Token]().value` as been removed. Use `Dimensions.of(context).insets.[token]` instead.
-- **Breaking**: DimensionsData class as been renamed to DimensionsThemeData
+- **Breaking**: DimensionsData class as been renamed to DimensionsThemeData.
 - DimensionsThemeData now have a get(DimensionToken) that returns the corresponding value for a given token.
-- **Breaking**: RadiiTheme now use [double] values instead of [Radius]
-- Introduce RadiusOf util class
+- **Breaking**: RadiiTheme now use [double] values instead of [Radius].
+- Introduce RadiusOf util class.
+- **Breaking**: `[Space|Insets|BorderWidth|Radius]Dimensions.from` constructor is now named `Dimensions.fillMissing`.
+- `[Space|Insets|BorderWidth|Radius]Dimensions` parameters are no more `required`.
 - Improved readme
 
 ## 0.0.1+1

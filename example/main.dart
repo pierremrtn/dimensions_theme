@@ -19,7 +19,7 @@ void main() {
               smaller: 10,
               smallest: 5,
             ),
-            insets: InsetDimensions.from(
+            insets: InsetDimensions.fillMissing(
               large: 22,
               medium: 20,
               small: 18,
