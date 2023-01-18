@@ -8,7 +8,11 @@ Furthermore, the package includes pre-built widgets and utilities for consuming 
 DimensionsTheme provides seven tokens that you can use to define your dimensions: `largest`, `larger`, `large`, `medium`, `small`, `smaller`, `smallest`.
 
 # Dimensions Families
-The Dimensions theme supports the following dimension families: Spaces (dimensions of blank spaces between widgets), Insets (values of padding), Border Widths, and Border Radii.
+The Dimensions theme supports the following dimension families:
+- Spaces (dimensions of blank spaces between widgets)
+- Insets (values of padding)
+- Border Widths
+- Border Radii
 
 # Usage
 ## Define your dimensions theme
