@@ -7,6 +7,9 @@ Furthermore, the package includes pre-built widgets and utilities for consuming 
 # Dimensions tokens
 DimensionsTheme provides seven tokens that you can use to define your dimensions: `largest`, `larger`, `large`, `medium`, `small`, `smaller`, `smallest`.
 
+# Dimensions Families
+The Dimensions theme supports the following dimension families: Spaces (dimensions of blank spaces between widgets), Insets (values of padding), Border Widths, and Border Radii.
+
 # Usage
 ## Define your dimensions theme
 ```dart
@@ -42,13 +45,14 @@ MaterialApp(
 ```
 ## Accessing dimensions values
 ### Direct access
-
 ```dart
-final double spaceSmall = Dimensions.of(context).spaces.small;
+final double spaceSmall = Dimensions.of(context).spaces.largest;
 final double paddingLarge = Dimensions.of(context).insets.large;
+final double borderWidth = Dimensions.of(context).borderWidths.medium;
+final double radius = Dimensions.of(context).radii.small;
 ```
 
-### Blank space
+### Blank spaces
 Space widgets are sized box with pre-filled height/width based on the corresponding space value you've specified inside the dimensions theme.
 ```dart
 SpaceLargest(),
@@ -86,6 +90,21 @@ Container(
   ),
 ),
 ```
+
+### Radii
+The `RadiusOf` class provides similar constructors API that the regular `Radius` but takes some dimensions token as parameter instead of raw double.
+```dart
+borderRadius: BorderRadius.all(
+  RadiusOf(context).circular(Dimensions.small),
+),
+borderRadius: BorderRadius.all(
+  RadiusOf(context).elliptical(Dimensions.small, Dimensions.medium),
+),
+borderRadius: BorderRadius.circular(
+  Dimensions.of(context).radii.small,
+),
+```
+
 
 ## Contribution | Bug report | Feature request
 Please fill and issue on [github](https://github.com/Pierre2tm/dimensions_theme/issues)
