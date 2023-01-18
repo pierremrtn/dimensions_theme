@@ -40,8 +40,16 @@ MaterialApp(
           smaller: 5,
           smallest: 2.5,
         ),
-        borderWidth: BorderWidthDimensions(...),
-        radii: RadiusDimensions(...),
+        borderWidth: BorderWidthDimensions(
+          // You can omit some values
+          medium: 2,
+          small: 1,
+        ),
+        radii: RadiusDimensions(
+          large: 12
+          medium: 10,
+          small: 8,
+        ),
       ),
     ],
   ),
