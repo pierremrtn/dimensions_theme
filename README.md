@@ -57,11 +57,9 @@ MaterialApp(
 ```
 ## Accessing dimensions values
 ### Direct access
-```dart
-Dimensions.of(context).[family].[token]
-```
+You can access any token value using the following syntaxe: `Dimensions.of(context).[family].[token]`.
 
-example:
+**Example:**
 ```dart
 final double spaceSmall = Dimensions.of(context).spaces.largest;
 final double paddingLarge = Dimensions.of(context).insets.large;
@@ -71,6 +69,9 @@ final double radius = Dimensions.of(context).radii.small;
 
 ### Blank spaces
 Space widgets are sized box with pre-filled height/width based on the corresponding space value you've specified inside the dimensions theme.
+You can construct blank space widgets using the following widget name: `Space[token]()`.
+You can restrict the blank space size to one dimensions (width or height) using `Space[token].w()` or `Space[token].h()`.
+
 ```dart
 SpaceLargest(),
 SpaceLarger(),
