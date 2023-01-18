@@ -3,6 +3,8 @@
 /// More dartdocs go here.
 library dimensions_theme;
 
+import 'package:flutter/painting.dart';
+
 export 'src/dimensions_theme_data.dart' show RadiusDimensions;
 
 export 'src/dimensions_theme.dart'
@@ -10,7 +12,7 @@ export 'src/dimensions_theme.dart'
 
 export 'src/edge_insets_extensions.dart'
     show
-        EdgeInsetsComposer,
+        EdgeInsetsOf,
         EdgeInsetsBuilder,
         EdgeInsetsLargest,
         EdgeInsetsLarger,

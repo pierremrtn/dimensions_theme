@@ -1,7 +1,10 @@
+import 'dart:html';
 import 'dart:ui';
 
-class DimensionsData<T> {
-  DimensionsData({
+import 'package:dimensions_theme/src/dimensions_theme.dart';
+
+class DimensionsThemeData<T> {
+  DimensionsThemeData({
     required this.smallest,
     required this.smaller,
     required this.small,
@@ -19,13 +22,28 @@ class DimensionsData<T> {
   final T larger;
   final T largest;
 
-  static DimensionsData<T> lerp<T>(
-    DimensionsData<T> a,
-    DimensionsData<T> b,
+  late final _tokenMap = {
+    Dimensions.smallest: smallest,
+    Dimensions.smaller: smaller,
+    Dimensions.small: small,
+    Dimensions.medium: medium,
+    Dimensions.large: large,
+    Dimensions.larger: larger,
+    Dimensions.largest: largest,
+  };
+
+  T get(DimensionToken token) {
+    assert(_tokenMap[token] != null, 'Forbidden token usage');
+    return _tokenMap[token]!;
+  }
+
+  static DimensionsThemeData<T> lerp<T>(
+    DimensionsThemeData<T> a,
+    DimensionsThemeData<T> b,
     double t,
     T? Function(T?, T?, double) lerpFunction,
   ) {
-    return DimensionsData<T>(
+    return DimensionsThemeData<T>(
       smallest: lerpFunction(a.smallest, b.smallest, t) as T,
       smaller: lerpFunction(a.smaller, b.smaller, t) as T,
       small: lerpFunction(a.small, b.small, t) as T,
@@ -36,7 +54,7 @@ class DimensionsData<T> {
     );
   }
 
-  DimensionsData<T> copyWith({
+  DimensionsThemeData<T> copyWith({
     T? smallest,
     T? smaller,
     T? small,
@@ -45,7 +63,7 @@ class DimensionsData<T> {
     T? larger,
     T? largest,
   }) {
-    return DimensionsData<T>(
+    return DimensionsThemeData<T>(
       smallest: smallest ?? this.smallest,
       smaller: smaller ?? this.smaller,
       small: small ?? this.small,
@@ -102,7 +120,7 @@ U _simpleDimensionTokensResolver<T, U>(
   );
 }
 
-class RadiusDimensions extends DimensionsData<Radius> {
+class RadiusDimensions extends DimensionsThemeData<Radius> {
   RadiusDimensions({
     required super.smallest,
     required super.smaller,
@@ -152,7 +170,7 @@ class RadiusDimensions extends DimensionsData<Radius> {
       );
 }
 
-class DoubleDimensions extends DimensionsData<double> {
+class DoubleDimensions extends DimensionsThemeData<double> {
   DoubleDimensions({
     required super.smallest,
     required super.smaller,

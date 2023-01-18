@@ -113,18 +113,18 @@ class DimensionsThemeExample extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedPadding(
-                  padding: EdgeInsetsComposer.of(context).only(
-                    left: EdgeInsetsLargest(),
-                    top: EdgeInsetsLarge(),
-                    right: EdgeInsetsSmall(),
-                    bottom: EdgeInsetsSmallest(),
+                  padding: EdgeInsetsOf(context).only(
+                    left: Dimensions.medium,
+                    top: Dimensions.large,
+                    right: Dimensions.small,
+                    bottom: Dimensions.smallest,
                   ),
                 ),
                 const SpaceMedium(),
                 OutlinedPadding(
-                  padding: EdgeInsetsComposer.of(context).symmetric(
-                    horizontal: EdgeInsetsLargest(),
-                    vertical: EdgeInsetsSmallest(),
+                  padding: EdgeInsetsOf(context).symmetric(
+                    horizontal: Dimensions.largest,
+                    vertical: Dimensions.small,
                   ),
                 ),
               ],
