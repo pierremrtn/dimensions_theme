@@ -2,34 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'dimensions_theme.dart';
 
-/// A convenience class for creating [EdgeInsets] objects with a given edge inset value.
-class EdgeInsetsBuilder {
-  const EdgeInsetsBuilder._(this._value);
-
-  final double _value;
-
-  /// Returns an [EdgeInsets] object with the same inset value for all edges.
-  EdgeInsets get all => EdgeInsets.all(_value);
-
-  /// Returns an [EdgeInsets] object with the same inset value for the top and bottom edges.
-  EdgeInsets get vertical => EdgeInsets.symmetric(vertical: _value);
-
-  /// Returns an [EdgeInsets] object with the same inset value for the left and right edges.
-  EdgeInsets get horizontal => EdgeInsets.symmetric(horizontal: _value);
-
-  /// Returns an [EdgeInsets] object with the given inset value for the left edge.
-  EdgeInsets get left => EdgeInsets.only(left: _value);
-
-  /// Returns an [EdgeInsets] object with the given inset value for the top edge.
-  EdgeInsets get top => EdgeInsets.only(top: _value);
-
-  /// Returns an [EdgeInsets] object with the given inset value for the right edge.
-  EdgeInsets get right => EdgeInsets.only(right: _value);
-
-  /// Returns an [EdgeInsets] object with the given inset value for the bottom edge.
-  EdgeInsets get bottom => EdgeInsets.only(bottom: _value);
-}
-
 class EdgeInsetsOf {
   const EdgeInsetsOf(this.context);
 
@@ -66,6 +38,34 @@ class EdgeInsetsOf {
       horizontal: horizontal != null ? theme.get(horizontal) : 0,
     );
   }
+}
+
+/// A convenience class for creating [EdgeInsets] objects with a given edge inset value.
+class EdgeInsetsBuilder {
+  const EdgeInsetsBuilder._(this._value);
+
+  final double _value;
+
+  /// Returns an [EdgeInsets] object with the same inset value for all edges.
+  EdgeInsets get all => EdgeInsets.all(_value);
+
+  /// Returns an [EdgeInsets] object with the same inset value for the top and bottom edges.
+  EdgeInsets get vertical => EdgeInsets.symmetric(vertical: _value);
+
+  /// Returns an [EdgeInsets] object with the same inset value for the left and right edges.
+  EdgeInsets get horizontal => EdgeInsets.symmetric(horizontal: _value);
+
+  /// Returns an [EdgeInsets] object with the given inset value for the left edge.
+  EdgeInsets get left => EdgeInsets.only(left: _value);
+
+  /// Returns an [EdgeInsets] object with the given inset value for the top edge.
+  EdgeInsets get top => EdgeInsets.only(top: _value);
+
+  /// Returns an [EdgeInsets] object with the given inset value for the right edge.
+  EdgeInsets get right => EdgeInsets.only(right: _value);
+
+  /// Returns an [EdgeInsets] object with the given inset value for the bottom edge.
+  EdgeInsets get bottom => EdgeInsets.only(bottom: _value);
 }
 
 /// {@template dimensions_theme_x_edge_insets_ctr}

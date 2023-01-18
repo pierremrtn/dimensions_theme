@@ -1,4 +1,3 @@
-import 'dart:html';
 import 'dart:ui';
 
 import 'package:dimensions_theme/src/dimensions_theme.dart';
@@ -118,56 +117,6 @@ U _simpleDimensionTokensResolver<T, U>(
     larger: largerValue,
     largest: largestValue,
   );
-}
-
-class RadiusDimensions extends DimensionsThemeData<Radius> {
-  RadiusDimensions({
-    required super.smallest,
-    required super.smaller,
-    required super.small,
-    required super.medium,
-    required super.large,
-    required super.larger,
-    required super.largest,
-  });
-
-  static RadiusDimensions from({
-    required Radius medium,
-    double scaleFactor = .2,
-    Radius? smallest,
-    Radius? smaller,
-    Radius? small,
-    Radius? large,
-    Radius? larger,
-    Radius? largest,
-  }) =>
-      _simpleDimensionTokensResolver(
-        medium,
-        smallest: smallest,
-        smaller: smaller,
-        small: small,
-        large: large,
-        larger: larger,
-        largest: largest,
-        scaleUp: (radius) => radius * (1 + scaleFactor),
-        scaleDown: (radius) => radius * (1 - scaleFactor),
-        factory: RadiusDimensions.new,
-      );
-
-  static RadiusDimensions lerp(
-    RadiusDimensions a,
-    RadiusDimensions b,
-    double t,
-  ) =>
-      RadiusDimensions(
-        smallest: Radius.lerp(a.smallest, b.smallest, t)!,
-        smaller: Radius.lerp(a.smaller, b.smaller, t)!,
-        small: Radius.lerp(a.small, b.small, t)!,
-        medium: Radius.lerp(a.medium, b.medium, t)!,
-        large: Radius.lerp(a.large, b.large, t)!,
-        larger: Radius.lerp(a.larger, b.larger, t)!,
-        largest: Radius.lerp(a.largest, b.largest, t)!,
-      );
 }
 
 class DoubleDimensions extends DimensionsThemeData<double> {
