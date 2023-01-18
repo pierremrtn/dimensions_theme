@@ -5,6 +5,9 @@
 - **Breaking**: `EdgeInsets[Token]().value` as been removed. Use `Dimensions.of(context).insets.[token]` instead.
 - **Breaking**: DimensionsData class as been renamed to DimensionsThemeData
 - DimensionsThemeData now have a get(DimensionToken) that returns the corresponding value for a given token.
+- **Breaking**: RadiiTheme now use [double] values instead of [Radius]
+- Introduce RadiusOf util class
+- Improved readme
 
 ## 0.0.1+1
 - Readme improvements
