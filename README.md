@@ -58,6 +58,11 @@ MaterialApp(
 ## Accessing dimensions values
 ### Direct access
 ```dart
+Dimensions.of(context).[family].[token]
+```
+
+example:
+```dart
 final double spaceSmall = Dimensions.of(context).spaces.largest;
 final double paddingLarge = Dimensions.of(context).insets.large;
 final double borderWidth = Dimensions.of(context).borderWidths.medium;
