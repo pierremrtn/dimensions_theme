@@ -24,6 +24,7 @@ class DimensionToken {
 typedef SpaceDimensions = DoubleDimensions;
 typedef BorderWidthDimensions = DoubleDimensions;
 typedef InsetDimensions = DoubleDimensions;
+typedef RadiusDimensions = DoubleDimensions;
 
 final SpaceDimensions _kDefaultSpaceDimensions =
     SpaceDimensions.from(medium: 20);
@@ -32,7 +33,7 @@ final InsetDimensions _kDefaultInsetDimensions =
     InsetDimensions.from(medium: 10);
 
 final RadiusDimensions _kDefaultRadiusDimensions =
-    RadiusDimensions.from(medium: const Radius.circular(8));
+    RadiusDimensions.from(medium: 8);
 
 final BorderWidthDimensions _kDefaultBorderWidthDimensions =
     BorderWidthDimensions.from(medium: 2);
@@ -87,7 +88,8 @@ class Dimensions extends ThemeExtension<Dimensions> {
     if (other is! Dimensions) return this;
     return Dimensions(
       spaces: SpaceDimensions.lerp(spaces, other.spaces, t),
-      borderWidths: DoubleDimensions.lerp(borderWidths, other.borderWidths, t),
+      borderWidths:
+          BorderWidthDimensions.lerp(borderWidths, other.borderWidths, t),
       radii: RadiusDimensions.lerp(radii, other.radii, t),
       insets: InsetDimensions.lerp(insets, other.insets, t),
     );

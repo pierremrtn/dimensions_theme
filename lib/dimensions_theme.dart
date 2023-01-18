@@ -3,8 +3,6 @@
 /// More dartdocs go here.
 library dimensions_theme;
 
-import 'package:flutter/painting.dart';
-
 export 'src/dimensions_theme_data.dart' show RadiusDimensions;
 
 export 'src/dimensions_theme.dart'
@@ -31,3 +29,5 @@ export 'src/space_widgets.dart'
         SpaceSmall,
         SpaceSmaller,
         SpaceSmallest;
+
+export 'src/radius_utils.dart' show RadiusOf;
