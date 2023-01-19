@@ -1,14 +1,15 @@
 # 📏 dimensions_theme
-dimensions_theme introduces the concept of a "Dimensions theme", a theme extension which allows for the centralization of app dimensions such as padding, margins, and other dimensions inside the flutter theme. This approach offers the benefit of enabling dynamic changes to dimensions based on factors like screen size and user settings.
-It also enforce the use of well-defined dimensions value, resulting in greater consistent throughout the app. 
+dimensions_theme introduces the concept of a "Dimensions theme", a theme extension that centralizes app dimensions such as padding, margins, and other dimensions within the Flutter theme. 
+Centralizing dimensions in one place simplifies changes and ensures consistency throughout the app.
+This approach also offers the benefit of being able to dynamically changes the dimensions values based on factors like screen size and user settings.
 
-Furthermore, the package includes pre-built widgets and utilities for consuming the dimensions theme in a simple and declarative way.
+This package also provides pre-built widgets and utilities for consuming the dimensions theme in a simple and declarative way.
 
-# Dimensions tokens
+# Dimensions tokens and families
 DimensionsTheme provides seven tokens that you can use to define your dimensions: `largest`, `larger`, `large`, `medium`, `small`, `smaller`, `smallest`.
 
-# Dimensions Families
-The Dimensions theme supports the following dimension families:
+The Dimensions theme supports the specialized dimensions theme for various usage such as blank spaces or paddings, each one containing the seven dimension tokens.
+This package actually support:
 - Spaces (dimensions of blank spaces between widgets)
 - Insets (values of padding)
 - Border Widths
@@ -68,9 +69,9 @@ final double radius = Dimensions.of(context).radii.small;
 ```
 
 ### Blank spaces
-Space widgets are sized box with pre-filled height/width based on the corresponding space value you've specified inside the dimensions theme.
-You can construct blank space widgets using the following widget name: `Space[token]()`.
-You can restrict the blank space size to one dimensions (width or height) using `Space[token].w()` or `Space[token].h()`.
+The dimensions_theme package includes pre-defined space widgets, such as `SpaceMedium` and `SpaceLarge`, which are `SizedBox` widgets with pre-filled height/width values based on the corresponding space value specified in the dimensions theme.
+You can construct blank space widgets for any token using like so: `Space[token]()`.
+You can also restrict the blank space size to one dimensions (width or height) using `Space[token].w()` or `Space[token].h()`.
 
 ```dart
 SpaceLargest(),
@@ -86,7 +87,7 @@ SpaceSmallest.h(), // width: 0, height: spaces.smallest
 ```
 
 ### EdgeInsets
-The `EdgeInsetsOf` class provides same constructor than the regular `EdgeInsets` class but takes dimensions token as parameter instead of doubles:
+The `EdgeInsetsOf` class provides same constructor than the regular `EdgeInsets` class but takes dimensions tokens as parameters instead of raw doubles:
 ```dart
 Padding(
   padding: EdgeInsetsOf(context).all(Dimensions.small),
@@ -110,7 +111,7 @@ Container(
 ```
 
 ### Radii
-The `RadiusOf` class provides similar constructors API that the regular `Radius` but takes some dimensions token as parameter instead of raw double.
+The `RadiusOf` class provides similar constructors API that the regular `Radius` but takes some dimensions token as parameters instead of raw doubles.
 ```dart
 borderRadius: BorderRadius.all(
   RadiusOf(context).circular(Dimensions.small),
