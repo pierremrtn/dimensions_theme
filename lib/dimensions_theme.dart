@@ -2,7 +2,12 @@
 library dimensions_theme;
 
 export 'src/dimensions_theme.dart'
-    show SpaceDimensions, BorderWidthDimensions, InsetDimensions, Dimensions;
+    show
+        SpaceDimensions,
+        BorderWidthDimensions,
+        InsetDimensions,
+        Dimensions,
+        DimensionToken;
 
 export 'src/edge_insets_utils.dart'
     show
