@@ -1,6 +1,6 @@
 # 📏 dimensions_theme
 dimensions_theme introduces the concept of a "Dimensions theme", a theme extension that centralizes app dimensions such as padding, margins, and other dimensions within the Flutter theme. 
-Centralizing dimensions in one place simplifies changes and ensures consistency throughout the app.
+Centralizing dimensions in one place simplifies change and ensures consistency throughout the app.
 This approach also offers the benefit of being able to dynamically changes the dimensions values based on factors like screen size and user settings.
 
 This package also provides pre-built widgets and utilities for consuming the dimensions theme in a simple and declarative way.
@@ -8,8 +8,8 @@ This package also provides pre-built widgets and utilities for consuming the dim
 # Dimensions tokens and families
 DimensionsTheme provides seven tokens that you can use to define your dimensions: `largest`, `larger`, `large`, `medium`, `small`, `smaller`, `smallest`.
 
-The Dimensions theme supports the specialized dimensions theme for various usage such as blank spaces or paddings, each one containing the seven dimension tokens.
-This package actually support:
+The Dimensions theme supports specialized dimensions theme for various usages such as blank spaces or paddings, each one containing the seven dimension tokens.
+This package actually supports:
 - Spaces (dimensions of blank spaces between widgets)
 - Insets (values of padding)
 - Border Widths
