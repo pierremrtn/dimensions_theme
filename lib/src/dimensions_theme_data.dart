@@ -21,19 +21,23 @@ class DimensionsThemeData<T> {
   final T larger;
   final T largest;
 
-  late final _tokenMap = {
-    Dimensions.smallest: smallest,
-    Dimensions.smaller: smaller,
-    Dimensions.small: small,
-    Dimensions.medium: medium,
-    Dimensions.large: large,
-    Dimensions.larger: larger,
-    Dimensions.largest: largest,
-  };
-
   T get(DimensionToken token) {
-    assert(_tokenMap[token] != null, 'Forbidden token usage');
-    return _tokenMap[token]!;
+    switch (token) {
+      case DimensionToken.smallest:
+        return smallest;
+      case DimensionToken.smaller:
+        return smaller;
+      case DimensionToken.small:
+        return small;
+      case DimensionToken.medium:
+        return medium;
+      case DimensionToken.large:
+        return large;
+      case DimensionToken.larger:
+        return larger;
+      case DimensionToken.largest:
+        return largest;
+    }
   }
 
   static DimensionsThemeData<T> lerp<T>(
