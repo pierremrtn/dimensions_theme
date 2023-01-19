@@ -63,9 +63,7 @@ class DimensionsThemeExample extends StatelessWidget {
                 Outlined(child: SpaceSmallest()),
               ],
             ),
-            const SizedBox(
-              height: 100,
-            ),
+            const SpaceLarge(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -84,9 +82,7 @@ class DimensionsThemeExample extends StatelessWidget {
                 OutlinedPadding(padding: EdgeInsetsSmallest.of(context).all),
               ],
             ),
-            const SizedBox(
-              height: 100,
-            ),
+            const SpaceLarge(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -106,9 +102,7 @@ class DimensionsThemeExample extends StatelessWidget {
                     padding: EdgeInsetsMedium.of(context).horizontal),
               ],
             ),
-            const SizedBox(
-              height: 100,
-            ),
+            const SpaceLarge(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -126,6 +120,52 @@ class DimensionsThemeExample extends StatelessWidget {
                     horizontal: Dimensions.largest,
                     vertical: Dimensions.small,
                   ),
+                ),
+              ],
+            ),
+            const SpaceLarge(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Outlined(
+                  radius: DimensionToken.largest,
+                  width: DimensionToken.largest,
+                  child: SpaceLargest(),
+                ),
+                SpaceLargest(),
+                Outlined(
+                    radius: DimensionToken.larger,
+                    width: DimensionToken.larger,
+                    child: SpaceLarger()),
+                SpaceLarger(),
+                Outlined(
+                  radius: DimensionToken.large,
+                  width: DimensionToken.large,
+                  child: SpaceLarge(),
+                ),
+                SpaceLarge(),
+                Outlined(
+                  radius: DimensionToken.medium,
+                  width: DimensionToken.medium,
+                  child: SpaceMedium(),
+                ),
+                SpaceMedium(),
+                Outlined(
+                  radius: DimensionToken.small,
+                  width: DimensionToken.small,
+                  child: SpaceSmall(),
+                ),
+                SpaceSmall(),
+                Outlined(
+                  radius: DimensionToken.smaller,
+                  width: DimensionToken.smaller,
+                  child: SpaceSmaller(),
+                ),
+                SpaceSmaller(),
+                Outlined(
+                  radius: DimensionToken.smallest,
+                  width: DimensionToken.smallest,
+                  child: SpaceSmallest(),
                 ),
               ],
             ),

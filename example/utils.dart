@@ -1,12 +1,17 @@
+import 'package:dimensions_theme/dimensions_theme.dart';
 import 'package:flutter/material.dart';
 
 class Outlined extends StatelessWidget {
   const Outlined({
     super.key,
     required this.child,
+    this.width,
+    this.radius,
   });
 
   final Widget child;
+  final DimensionToken? width;
+  final DimensionToken? radius;
 
   @override
   Widget build(BuildContext context) {
@@ -14,6 +19,12 @@ class Outlined extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,
+          width: Dimensions.of(context)
+              .borderWidths
+              .get(width ?? Dimensions.small),
+        ),
+        borderRadius: BorderRadius.circular(
+          Dimensions.of(context).radii.get(radius ?? Dimensions.small),
         ),
       ),
       child: child,
