@@ -6,6 +6,7 @@ export 'src/dimensions_theme.dart'
         SpaceDimensions,
         BorderWidthDimensions,
         InsetDimensions,
+        RadiusDimensions,
         Dimensions,
         DimensionToken;
 

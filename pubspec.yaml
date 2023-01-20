@@ -1,6 +1,6 @@
 name: dimensions_theme
 description: Define app dimensions such as blank spaces or paddings inside flutter theme.
-version: 0.0.2
+version: 0.0.2+1
 repository: https://github.com/Pierre2tm/dimensions_theme
 issue_tracker: https://github.com/Pierre2tm/dimensions_theme/issues
 homepage: https://github.com/Pierre2tm/dimensions_theme
