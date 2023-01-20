@@ -124,6 +124,11 @@ borderRadius: BorderRadius.circular(
 ),
 ```
 
+### Border widths
+```dart
+borderWidth: Dimensions.of(context).borderWidths.small,
+```
+
 
 ## Contribution | Bug report | Feature request
 Please fill and issue on [github](https://github.com/Pierre2tm/dimensions_theme/issues)
