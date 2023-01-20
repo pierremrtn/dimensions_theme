@@ -1,3 +1,6 @@
+## 0.0.2+1
+- fix missing RadiusDimensions export 
+
 ## 0.0.2
 - DimensionToken class has been introduced. DimensionToken represent one the token defined in the package: [smallest, smaller, small, medium, large, larger, largest]. You can access theme using Dimensions.[token].
 - **Breaking**: EdgeInsetsComposer redesign:
