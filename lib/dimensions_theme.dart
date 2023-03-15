@@ -24,6 +24,7 @@ export 'src/edge_insets_utils.dart'
 
 export 'src/space_widgets.dart'
     show
+        Space,
         SpaceLargest,
         SpaceLarger,
         SpaceLarge,

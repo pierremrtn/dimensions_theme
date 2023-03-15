@@ -4,6 +4,47 @@ import 'dimensions_theme.dart';
 
 enum _SpaceDirection { height, width, both }
 
+abstract class Space extends StatelessWidget {
+  const Space(
+    this.token, {
+    super.key,
+  }) : dir = _SpaceDirection.both;
+
+  const Space.w(
+    this.token, {
+    super.key,
+  }) : dir = _SpaceDirection.width;
+
+  const Space.h(
+    this.token, {
+    super.key,
+  }) : dir = _SpaceDirection.height;
+
+  final DimensionToken token;
+  final _SpaceDirection dir;
+
+  @override
+  Widget build(BuildContext context) {
+    final space = Dimensions.of(context).spaces.get(token);
+    Size size;
+    switch (dir) {
+      case _SpaceDirection.height:
+        size = Size(0, space);
+        break;
+      case _SpaceDirection.width:
+        size = Size(space, 0);
+        break;
+      case _SpaceDirection.both:
+        size = Size(space, space);
+        break;
+    }
+    return SizedBox.fromSize(
+      size: size,
+    );
+  }
+}
+
+@Deprecated('Use Space widget instead')
 abstract class _Space extends StatelessWidget {
   const _Space({
     super.key,
@@ -44,6 +85,7 @@ abstract class _Space extends StatelessWidget {
 
 /// A blank space with the size of
 /// `Dimensions.spaces.largest` of the current context.
+@Deprecated('Use Space widget instead')
 class SpaceLargest extends _Space {
   /// A blank space with the size of `Dimensions.spaces.largest` on both axis.
   const SpaceLargest({
@@ -66,6 +108,7 @@ class SpaceLargest extends _Space {
 
 /// A blank space with the size of
 /// `Dimensions.spaces.larger` of the current context.
+@Deprecated('Use Space widget instead')
 class SpaceLarger extends _Space {
   /// A blank space with the size of `Dimensions.spaces.larger` on both axis.
   const SpaceLarger({
@@ -88,6 +131,7 @@ class SpaceLarger extends _Space {
 
 /// A blank space with the size of
 /// `Dimensions.spaces.large` of the current context.
+@Deprecated('Use Space widget instead')
 class SpaceLarge extends _Space {
   /// A blank space with the size of `Dimensions.spaces.large` on both axis.
   const SpaceLarge({
@@ -110,6 +154,7 @@ class SpaceLarge extends _Space {
 
 /// A blank space with the size of
 /// `Dimensions.spaces.medium` of the current context.
+@Deprecated('Use Space widget instead')
 class SpaceMedium extends _Space {
   /// A blank space with the size of `Dimensions.spaces.medium` on both axis.
   const SpaceMedium({
@@ -132,6 +177,7 @@ class SpaceMedium extends _Space {
 
 /// A blank space with the size of
 /// `Dimensions.spaces.small` of the current context.
+@Deprecated('Use Space widget instead')
 class SpaceSmall extends _Space {
   /// A blank space with the size of `Dimensions.spaces.small` on both axis.
   const SpaceSmall({
@@ -154,6 +200,7 @@ class SpaceSmall extends _Space {
 
 /// A blank space with the size of
 /// `Dimensions.spaces.smaller` of the current context.
+@Deprecated('Use Space widget instead')
 class SpaceSmaller extends _Space {
   /// A blank space with the size of `Dimensions.spaces.smaller` on both axis.
   const SpaceSmaller({
@@ -176,6 +223,7 @@ class SpaceSmaller extends _Space {
 
 /// A blank space with the size of
 /// `Dimensions.spaces.smallest` of the current context.
+@Deprecated('Use Space widget instead')
 class SpaceSmallest extends _Space {
   /// A blank space with the size of `Dimensions.spaces.smallest` on both axis.
   const SpaceSmallest({
