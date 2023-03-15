@@ -41,6 +41,7 @@ class EdgeInsetsOf {
 }
 
 /// A convenience class for creating [EdgeInsets] objects with a given edge inset value.
+@Deprecated("Use EdgeInsetOf instead")
 class EdgeInsetsBuilder {
   const EdgeInsetsBuilder._(this._value);
 
@@ -72,6 +73,7 @@ class EdgeInsetsBuilder {
 /// This class provides a static `of` method to obtain an EdgeInsetBuilder
 /// with the small insets value of a given `BuildContext`'s dimensions.
 /// {@endtemplate}
+@Deprecated("Use EdgeInsetOf instead")
 class EdgeInsetsSmallest {
   /// {@template dimensions_theme_x_edge_insets_of}
   /// Obtains an EdgeInsetBuilder with the small edge inset value of
@@ -82,6 +84,7 @@ class EdgeInsetsSmallest {
 }
 
 /// {@macro dimension_theme_x_edge_insets_ctr}
+@Deprecated("Use EdgeInsetOf instead")
 class EdgeInsetsSmaller {
   /// {@macro dimension_theme_x_edge_insets_of}
   static EdgeInsetsBuilder of(BuildContext context) =>
@@ -89,6 +92,7 @@ class EdgeInsetsSmaller {
 }
 
 /// {@macro dimension_theme_x_edge_insets_ctr}
+@Deprecated("Use EdgeInsetOf instead")
 class EdgeInsetsSmall {
   /// {@macro dimension_theme_x_edge_insets_of}
   static EdgeInsetsBuilder of(BuildContext context) =>
@@ -96,6 +100,7 @@ class EdgeInsetsSmall {
 }
 
 /// {@macro dimension_theme_x_edge_insets_ctr}
+@Deprecated("Use EdgeInsetOf instead")
 class EdgeInsetsMedium {
   /// {@macro dimension_theme_x_edge_insets_of}
   static EdgeInsetsBuilder of(BuildContext context) =>
@@ -103,6 +108,7 @@ class EdgeInsetsMedium {
 }
 
 /// {@macro dimension_theme_x_edge_insets_ctr}
+@Deprecated("Use EdgeInsetOf instead")
 class EdgeInsetsLarge {
   /// {@macro dimension_theme_x_edge_insets_of}
   static EdgeInsetsBuilder of(BuildContext context) =>
@@ -110,6 +116,7 @@ class EdgeInsetsLarge {
 }
 
 /// {@macro dimension_theme_x_edge_insets_ctr}
+@Deprecated("Use EdgeInsetOf instead")
 class EdgeInsetsLarger {
   /// {@macro dimension_theme_x_edge_insets_of}
   static EdgeInsetsBuilder of(BuildContext context) =>
@@ -117,6 +124,7 @@ class EdgeInsetsLarger {
 }
 
 /// {@macro dimension_theme_x_edge_insets_ctr}
+@Deprecated("Use EdgeInsetOf instead")
 class EdgeInsetsLargest {
   static EdgeInsetsBuilder of(BuildContext context) =>
       EdgeInsetsBuilder._(Dimensions.of(context).spaces.largest);
