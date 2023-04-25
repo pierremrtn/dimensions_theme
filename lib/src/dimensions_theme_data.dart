@@ -78,83 +78,25 @@ class DimensionsThemeData<T> {
   }
 }
 
-U _simpleDimensionTokensResolver<T, U>(
-  T medium, {
-  required T Function(T base) scaleUp,
-  required T Function(T base) scaleDown,
-  required U Function({
-    required T small,
-    required T smaller,
-    required T smallest,
-    required T medium,
-    required T large,
-    required T larger,
-    required T largest,
-  })
-      factory,
-  required T? smallest,
-  required T? smaller,
-  required T? small,
-  required T? large,
-  required T? larger,
-  required T? largest,
-}) {
-  assert(() {
-    return [smallest, smaller, small, medium, large, larger, largest]
-            .firstWhere((element) => element != null) !=
-        null;
-  }());
-
-  final T smallValue = small ?? scaleDown(medium);
-  final T smallerValue = smaller ?? scaleDown(smallValue);
-  final T smallestValue = smallest ?? scaleDown(smallerValue);
-  final T largeValue = large ?? scaleUp(medium);
-  final T largerValue = larger ?? scaleUp(largeValue);
-  final T largestValue = largest ?? scaleUp(largerValue);
-
-  return factory(
-    medium: medium,
-    small: smallValue,
-    smaller: smallerValue,
-    smallest: smallestValue,
-    large: largeValue,
-    larger: largerValue,
-    largest: largestValue,
-  );
-}
-
 class DoubleDimensions extends DimensionsThemeData<double> {
   DoubleDimensions({
-    super.smallest = 0,
-    super.smaller = 0,
-    super.small = 0,
-    super.medium = 0,
-    super.large = 0,
-    super.larger = 0,
-    super.largest = 0,
+    required super.smallest,
+    required super.smaller,
+    required super.small,
+    required super.medium,
+    required super.large,
+    required super.larger,
+    required super.largest,
   });
 
   /// Fill missing dimensions based on scale factor
-  static DoubleDimensions fillMissing({
-    required double medium,
-    double? smallest,
-    double? smaller,
-    double? small,
-    double? large,
-    double? larger,
-    double? largest,
-    double scaleFactor = .2,
+  static DoubleDimensions fromMedium(
+    double medium, {
+    ScaleDelegate scaleFactor = const ExpScaleFactor(.2),
   }) =>
       _simpleDimensionTokensResolver(
         medium,
-        smallest: smallest,
-        smaller: smaller,
-        small: small,
-        large: large,
-        larger: larger,
-        largest: largest,
-        scaleUp: (radius) => radius * (1 + scaleFactor),
-        scaleDown: (radius) => radius * (1 - scaleFactor),
+        scaleFactor: scaleFactor,
         factory: DoubleDimensions.new,
       );
 
@@ -172,4 +114,60 @@ class DoubleDimensions extends DimensionsThemeData<double> {
         larger: lerpDouble(a.larger, b.larger, t)!,
         largest: lerpDouble(a.largest, b.largest, t)!,
       );
+}
+
+U _simpleDimensionTokensResolver<T, U>(
+  T medium, {
+  required ScaleDelegate scaleFactor,
+  required U Function({
+    required T small,
+    required T smaller,
+    required T smallest,
+    required T medium,
+    required T large,
+    required T larger,
+    required T largest,
+  })
+      factory,
+}) {
+  final T smallValue = scaleFactor.scaleDown(medium);
+  final T smallerValue = scaleFactor.scaleDown(smallValue);
+  final T smallestValue = scaleFactor.scaleDown(smallerValue);
+
+  final T largeValue = scaleFactor.scaleUp(medium);
+  final T largerValue = scaleFactor.scaleUp(largeValue);
+  final T largestValue = scaleFactor.scaleUp(largerValue);
+
+  return factory(
+    small: smallValue,
+    smaller: smallerValue,
+    smallest: smallestValue,
+    medium: medium,
+    large: largeValue,
+    larger: largerValue,
+    largest: largestValue,
+  );
+}
+
+abstract class ScaleDelegate<T> {
+  T scaleUp(T base);
+  T scaleDown(T base);
+}
+
+class ExpScaleFactor implements ScaleDelegate<num> {
+  const ExpScaleFactor(this.factor);
+
+  final num factor;
+
+  num scaleUp(num base) => base * (1 + factor);
+  num scaleDown(num base) => base * (1 - factor);
+}
+
+class LinearScaleFactor implements ScaleDelegate<num> {
+  const LinearScaleFactor(this.gap);
+
+  final num gap;
+
+  num scaleUp(num base) => base + gap;
+  num scaleDown(num base) => base - gap;
 }

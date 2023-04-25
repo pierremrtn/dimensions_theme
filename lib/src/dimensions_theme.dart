@@ -17,17 +17,15 @@ typedef BorderWidthDimensions = DoubleDimensions;
 typedef InsetDimensions = DoubleDimensions;
 typedef RadiusDimensions = DoubleDimensions;
 
-final SpaceDimensions _kDefaultSpaceDimensions =
-    SpaceDimensions.fillMissing(medium: 20);
+final SpaceDimensions _kDefaultSpaceDimensions = SpaceDimensions.fromMedium(20);
 
-final InsetDimensions _kDefaultInsetDimensions =
-    InsetDimensions.fillMissing(medium: 10);
+final InsetDimensions _kDefaultInsetDimensions = InsetDimensions.fromMedium(10);
 
 final RadiusDimensions _kDefaultRadiusDimensions =
-    RadiusDimensions.fillMissing(medium: 8);
+    RadiusDimensions.fromMedium(8);
 
 final BorderWidthDimensions _kDefaultBorderWidthDimensions =
-    BorderWidthDimensions.fillMissing(medium: 2);
+    BorderWidthDimensions.fromMedium(2);
 
 class Dimensions extends ThemeExtension<Dimensions> {
   static const smallest = DimensionToken.smallest;
