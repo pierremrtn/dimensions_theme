@@ -4,7 +4,7 @@ import 'dimensions_theme.dart';
 
 enum _SpaceDirection { height, width, both }
 
-abstract class Space extends StatelessWidget {
+class Space extends StatelessWidget {
   const Space(
     this.token, {
     super.key,
