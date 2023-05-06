@@ -8,26 +8,26 @@ class Space extends StatelessWidget {
   const Space(
     this.token, {
     super.key,
-  }) : dir = _SpaceDirection.both;
+  }) : _dir = _SpaceDirection.both;
 
   const Space.w(
     this.token, {
     super.key,
-  }) : dir = _SpaceDirection.width;
+  }) : _dir = _SpaceDirection.width;
 
   const Space.h(
     this.token, {
     super.key,
-  }) : dir = _SpaceDirection.height;
+  }) : _dir = _SpaceDirection.height;
 
   final DimensionToken token;
-  final _SpaceDirection dir;
+  final _SpaceDirection _dir;
 
   @override
   Widget build(BuildContext context) {
     final space = Dimensions.of(context).spaces.get(token);
     Size size;
-    switch (dir) {
+    switch (_dir) {
       case _SpaceDirection.height:
         size = Size(0, space);
         break;

@@ -159,7 +159,10 @@ class ExpScaleFactor implements ScaleDelegate<num> {
 
   final num factor;
 
+  @override
   num scaleUp(num base) => base * (1 + factor);
+
+  @override
   num scaleDown(num base) => base * (1 - factor);
 }
 
@@ -168,6 +171,9 @@ class LinearScaleFactor implements ScaleDelegate<num> {
 
   final num gap;
 
+  @override
   num scaleUp(num base) => base + gap;
+
+  @override
   num scaleDown(num base) => base - gap;
 }
