@@ -1,4 +1,6 @@
 /// Define app dimensions such as blank spaces or paddings inside flutter theme.
+// ignore_for_file: deprecated_member_use_from_same_package
+
 library dimensions_theme;
 
 export 'src/dimensions_theme.dart'
