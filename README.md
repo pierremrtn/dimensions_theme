@@ -19,7 +19,7 @@ enum Dimension {
 MaterialApp(
   theme: ThemeData(
     extensions: const [
-      Dimensions({
+      DimensionsTheme({
         Dimension.xlarge: 20,
         Dimension.large: 16,
         Dimension.medium: 12,
@@ -60,7 +60,7 @@ enum Padding {
 MaterialApp(
   theme: ThemeData(
     extensions: const [
-      Dimensions({
+      DimensionsTheme({
         Space.xlarge: 20,
         Space.large: 16,
         Space.medium: 12,
