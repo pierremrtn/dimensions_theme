@@ -1,3 +1,6 @@
+## 0.1.1
+- **Breaking** rename `Dimensions` theme extension into `DimensionsTheme`, as `Dimensions` is often desirable as the name for the enum that holds dimension tokens
+
 ## 0.1.0
 - **Breaking** Migrate to dart 3
 - **Breaking** Dimensions theme extension no longer enforce pre-defined token

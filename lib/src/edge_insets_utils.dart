@@ -9,7 +9,7 @@ class EdgeInsetsOf {
 
   EdgeInsets all(Object dimension) {
     return EdgeInsets.all(
-      Dimensions.of(context).get(dimension),
+      DimensionsTheme.of(context).get(dimension),
     );
   }
 
@@ -19,7 +19,7 @@ class EdgeInsetsOf {
     Object? right,
     Object? bottom,
   }) {
-    final theme = Dimensions.of(context);
+    final theme = DimensionsTheme.of(context);
     return EdgeInsets.only(
       left: left != null ? theme.get(left) : 0,
       top: top != null ? theme.get(top) : 0,
@@ -32,7 +32,7 @@ class EdgeInsetsOf {
     Object? vertical,
     Object? horizontal,
   }) {
-    final theme = Dimensions.of(context);
+    final theme = DimensionsTheme.of(context);
     return EdgeInsets.symmetric(
       vertical: vertical != null ? theme.get(vertical) : 0,
       horizontal: horizontal != null ? theme.get(horizontal) : 0,

@@ -25,7 +25,7 @@ class Space extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final space = Dimensions.of(context).get(token);
+    final space = DimensionsTheme.of(context).get(token);
     Size size;
     switch (_dir) {
       case _SpaceDirection.height:

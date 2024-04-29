@@ -17,7 +17,7 @@ void main() {
       title: "dimensions_theme example",
       theme: ThemeData(
         extensions: const [
-          Dimensions({
+          DimensionsTheme({
             Dimension.largest: 30,
             Dimension.larger: 24,
             Dimension.large: 20,
@@ -224,10 +224,10 @@ class Outlined extends StatelessWidget {
       decoration: BoxDecoration(
         border: Border.all(
           color: Colors.black,
-          width: Dimensions.of(context).get(width ?? Dimension.small),
+          width: DimensionsTheme.of(context).get(width ?? Dimension.small),
         ),
         borderRadius: BorderRadius.circular(
-          Dimensions.of(context).get(radius ?? Dimension.small),
+          DimensionsTheme.of(context).get(radius ?? Dimension.small),
         ),
       ),
       child: child,

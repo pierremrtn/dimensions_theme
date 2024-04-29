@@ -11,7 +11,7 @@ class RadiusOf {
   /// from the dimensions theme of given context
   Radius circular(Object dimensionsToken) {
     return Radius.circular(
-      Dimensions.of(context).get(dimensionsToken),
+      DimensionsTheme.of(context).get(dimensionsToken),
     );
   }
 
@@ -21,7 +21,7 @@ class RadiusOf {
     Object x,
     Object y,
   ) {
-    final radiusDimensions = Dimensions.of(context);
+    final radiusDimensions = DimensionsTheme.of(context);
     return Radius.elliptical(
       radiusDimensions.get(x),
       radiusDimensions.get(y),

@@ -2,33 +2,33 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-class Dimensions extends ThemeExtension<Dimensions> {
-  static Dimensions of(BuildContext context) =>
-      Theme.of(context).extension<Dimensions>()!;
+class DimensionsTheme extends ThemeExtension<DimensionsTheme> {
+  static DimensionsTheme of(BuildContext context) =>
+      Theme.of(context).extension<DimensionsTheme>()!;
 
-  const Dimensions(this._values);
+  const DimensionsTheme(this._values);
 
   final Map<Object, double> _values;
 
   double get(Object token) => _values[token] ?? 0;
 
   @override
-  ThemeExtension<Dimensions> copyWith({
+  ThemeExtension<DimensionsTheme> copyWith({
     Map<Object, double>? values,
   }) {
-    return Dimensions(
+    return DimensionsTheme(
       values ?? _values,
     );
   }
 
   @override
-  ThemeExtension<Dimensions> lerp(
-    Dimensions? other,
+  ThemeExtension<DimensionsTheme> lerp(
+    DimensionsTheme? other,
     double t,
   ) {
-    if (other is! Dimensions) return this;
+    if (other is! DimensionsTheme) return this;
 
-    return Dimensions(
+    return DimensionsTheme(
       _values.map(
         (key, value) => MapEntry(
           key,

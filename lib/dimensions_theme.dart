@@ -3,7 +3,7 @@
 
 library dimensions_theme;
 
-export 'src/dimensions_theme.dart' show Dimensions;
+export 'src/dimensions_theme.dart' show DimensionsTheme;
 
 export 'src/edge_insets_utils.dart' show EdgeInsetsOf, PaddingThemeExtension;
 

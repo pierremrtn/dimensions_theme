@@ -41,7 +41,7 @@ class App extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
         extensions: const [
-          Dimensions({
+          DimensionsTheme({
             /// Padding
             Paddings.xxl: 20,
             Paddings.xl: 18,

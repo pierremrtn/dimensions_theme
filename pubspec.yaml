@@ -1,6 +1,6 @@
 name: dimensions_theme
 description: Define app dimensions inside flutter theme.
-version: 0.1.0
+version: 0.1.1
 repository: https://github.com/pierremrtn/dimensions_theme
 issue_tracker: https://github.com/pierremrtn/dimensions_theme/issues
 homepage: https://github.com/pierremrtn/dimensions_theme
