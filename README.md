@@ -5,7 +5,7 @@ dimensions_theme provides a theme extension to easily define and access app dime
 ## Define your dimensions
 
 ```dart
-// Uses tokens that's best fit your project needs. You can also uses multiple enums
+// Uses tokens that best fit your project needs. You can also use multiple enums
 enum Dimension {
   xlarge,
   large,
@@ -33,8 +33,8 @@ MaterialApp(
 
 ### Uses multiple enum for dimensions
 
-The `Dimensions` theme extension support using multiple enums as dimension token.
-This can be useful if you want to give different kind of dimensions value their own enum.
+The `Dimensions` theme extension supports using multiple enums as dimension tokens.
+This can be useful if you want to give different kinds of dimensions value their own enum.
 
 ```dart
 enum Space {
@@ -87,7 +87,7 @@ You can access any dimension value using the `get`:
 Dimensions.of(context).get(Dimension.small);
 ```
 
-Additionaly, this package provides helpers to makes widget tree more expressive:
+Additionally, this package provides helpers to make it easier to work with defined dimensions.
 
 ### Padding
 
@@ -100,7 +100,7 @@ Padding(
 )
 ```
 
-This extension provides counterparts to all `EdgeInsets` constructors, but uses Dimension tokens instead of raw double values.
+This extension provides counterparts to all `EdgeInsets` constructors but uses Dimension tokens instead of raw double values.
 
 ```dart
 context.padding.all(Dimension.small)
@@ -130,10 +130,10 @@ Column(
 )
 ```
 
-Alternatively, you can uses the `SpaceDimensionsMixin` to uses dimensions token directly to generate Space widgets:
+Alternatively, you can use the `SpaceDimensionsMixin` to construct Space widgets directly from your tokens:
 
 ```dart
-/// Add `SpaceDimensionsMixin` to your dimension token responsible of spaces
+/// Add `SpaceDimensionsMixin` to your dimension token responsible for spaces
 enum Spaces with SpaceDimensionsMixin {
   large,
   medium
@@ -151,7 +151,7 @@ Column(
 )
 ```
 
-All space widgets comes with `.w` and `.h` to restrict the blank space in one axis, respectively width and height.
+All space widgets come with `.w` and `.h` constructors to restrict the blank space in one axis, respectively width and height.
 
 ```dart
 Space.h(Dimensions.small)
@@ -175,7 +175,7 @@ Container(
 )
 ```
 
-This extension provides counterparts to all `Radius` constructors, but uses Dimension tokens instead of raw double values.
+This extension provides counterparts to all `Radius` constructors but uses Dimension tokens instead of raw double values.
 
 ```dart
 context.radius.elliptical(Dimensions.large);
