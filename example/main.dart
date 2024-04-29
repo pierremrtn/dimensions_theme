@@ -1,26 +1,31 @@
 import 'package:dimensions_theme/dimensions_theme.dart';
 import 'package:flutter/material.dart';
 
-import 'utils.dart';
+enum Dimension with SpaceDimensionsMixin {
+  largest,
+  larger,
+  large,
+  medium,
+  small,
+  smaller,
+  smallest,
+}
 
 void main() {
   runApp(
     MaterialApp(
       title: "dimensions_theme example",
       theme: ThemeData(
-        extensions: [
-          Dimensions(
-            spaces: SpaceDimensions(
-              largest: 55,
-              larger: 40,
-              large: 30,
-              medium: 20,
-              small: 15,
-              smaller: 10,
-              smallest: 5,
-            ),
-            insets: InsetDimensions.fromMedium(20),
-          ),
+        extensions: const [
+          Dimensions({
+            Dimension.largest: 30,
+            Dimension.larger: 24,
+            Dimension.large: 20,
+            Dimension.medium: 16,
+            Dimension.small: 8,
+            Dimension.smaller: 4,
+            Dimension.smallest: 2,
+          }),
         ],
       ),
       home: const DimensionsThemeExample(),
@@ -43,159 +48,210 @@ class DimensionsThemeExample extends StatelessWidget {
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
-                Outlined(child: Space(Dimensions.largest)),
-                Space(Dimensions.small),
-                Outlined(child: Space(Dimensions.larger)),
-                Space(Dimensions.small),
-                Outlined(child: Space(Dimensions.large)),
-                Space(Dimensions.small),
-                Outlined(child: Space(Dimensions.medium)),
-                Space(Dimensions.small),
-                Outlined(child: Space(Dimensions.small)),
-                Space(Dimensions.small),
-                Outlined(child: Space(Dimensions.smaller)),
-                Space(Dimensions.small),
-                Outlined(child: Space(Dimensions.largest)),
+              children: [
+                Outlined(child: Dimension.largest()),
+                const Space(Dimension.small),
+                Outlined(child: Dimension.larger()),
+                const Space(Dimension.small),
+                Outlined(child: Dimension.large()),
+                const Space(Dimension.small),
+                Outlined(child: Dimension.medium()),
+                const Space(Dimension.small),
+                Outlined(child: Dimension.small()),
+                const Space(Dimension.small),
+                Outlined(child: Dimension.smaller()),
+                const Space(Dimension.small),
+                Outlined(child: Dimension.largest()),
               ],
             ),
-            const Space(Dimensions.large),
+            Dimension.largest(),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedPadding(
-                  padding: EdgeInsetsOf(context).all(Dimensions.largest),
+                  padding: EdgeInsetsOf(context).all(Dimension.largest),
                 ),
-                const Space(Dimensions.largest),
+                const Space(Dimension.largest),
                 OutlinedPadding(
-                  padding: EdgeInsetsOf(context).all(Dimensions.larger),
+                  padding: EdgeInsetsOf(context).all(Dimension.larger),
                 ),
-                const Space(Dimensions.larger),
+                const Space(Dimension.larger),
                 OutlinedPadding(
-                  padding: EdgeInsetsOf(context).all(Dimensions.large),
+                  padding: EdgeInsetsOf(context).all(Dimension.large),
                 ),
-                const Space(Dimensions.large),
+                const Space(Dimension.large),
                 OutlinedPadding(
-                  padding: EdgeInsetsOf(context).all(Dimensions.medium),
+                  padding: EdgeInsetsOf(context).all(Dimension.medium),
                 ),
-                const Space(Dimensions.medium),
+                const Space(Dimension.medium),
                 OutlinedPadding(
-                  padding: EdgeInsetsOf(context).all(Dimensions.small),
+                  padding: EdgeInsetsOf(context).all(Dimension.small),
                 ),
-                const Space(Dimensions.small),
+                const Space(Dimension.small),
                 OutlinedPadding(
-                  padding: EdgeInsetsOf(context).all(Dimensions.smaller),
+                  padding: EdgeInsetsOf(context).all(Dimension.smaller),
                 ),
-                const Space(Dimensions.smaller),
+                const Space(Dimension.smaller),
                 OutlinedPadding(
-                  padding: EdgeInsetsOf(context).all(Dimensions.smallest),
+                  padding: EdgeInsetsOf(context).all(Dimension.smallest),
                 ),
               ],
             ),
-            const Space(Dimensions.large),
+            const Space(Dimension.large),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedPadding(
-                  padding: EdgeInsetsOf(context).all(Dimensions.medium),
+                  padding: EdgeInsetsOf(context).all(Dimension.medium),
                 ),
-                const Space(Dimensions.medium),
+                const Space(Dimension.medium),
                 OutlinedPadding(
-                  padding: EdgeInsetsOf(context).only(left: Dimensions.medium),
+                  padding: EdgeInsetsOf(context).only(left: Dimension.medium),
                 ),
-                const Space(Dimensions.medium),
+                const Space(Dimension.medium),
                 OutlinedPadding(
-                  padding: EdgeInsetsOf(context).only(right: Dimensions.medium),
+                  padding: EdgeInsetsOf(context).only(right: Dimension.medium),
                 ),
-                const Space(Dimensions.medium),
+                const Space(Dimension.medium),
                 OutlinedPadding(
-                  padding:
-                      EdgeInsetsOf(context).only(bottom: Dimensions.medium),
+                  padding: EdgeInsetsOf(context).only(bottom: Dimension.medium),
                 ),
-                const Space(Dimensions.medium),
+                const Space(Dimension.medium),
                 OutlinedPadding(
-                  padding: EdgeInsetsOf(context).only(top: Dimensions.medium),
+                  padding: EdgeInsetsOf(context).only(top: Dimension.medium),
                 ),
-                const Space(Dimensions.medium),
-                OutlinedPadding(
-                  padding: EdgeInsetsOf(context)
-                      .symmetric(vertical: Dimensions.medium),
-                ),
-                const Space(Dimensions.medium),
+                const Space(Dimension.medium),
                 OutlinedPadding(
                   padding: EdgeInsetsOf(context)
-                      .symmetric(horizontal: Dimensions.medium),
+                      .symmetric(vertical: Dimension.medium),
+                ),
+                const Space(Dimension.medium),
+                OutlinedPadding(
+                  padding: EdgeInsetsOf(context)
+                      .symmetric(horizontal: Dimension.medium),
                 ),
               ],
             ),
-            const Space(Dimensions.large),
+            const Space(Dimension.large),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 OutlinedPadding(
                   padding: EdgeInsetsOf(context).only(
-                    left: Dimensions.medium,
-                    top: Dimensions.large,
-                    right: Dimensions.small,
-                    bottom: Dimensions.smallest,
+                    left: Dimension.medium,
+                    top: Dimension.large,
+                    right: Dimension.small,
+                    bottom: Dimension.smallest,
                   ),
                 ),
-                const Space(Dimensions.medium),
+                const Space(Dimension.medium),
                 OutlinedPadding(
                   padding: EdgeInsetsOf(context).symmetric(
-                    horizontal: Dimensions.largest,
-                    vertical: Dimensions.small,
+                    horizontal: Dimension.largest,
+                    vertical: Dimension.small,
                   ),
                 ),
               ],
             ),
-            const Space(Dimensions.large),
-            Row(
+            const Space(Dimension.large),
+            const Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: const [
+              children: [
                 Outlined(
-                  radius: DimensionToken.largest,
-                  width: DimensionToken.largest,
-                  child: Space(Dimensions.largest),
+                  radius: Dimension.largest,
+                  width: Dimension.largest,
+                  child: Space(Dimension.largest),
                 ),
-                Space(Dimensions.largest),
+                Space(Dimension.largest),
                 Outlined(
-                    radius: DimensionToken.larger,
-                    width: DimensionToken.larger,
-                    child: Space(Dimensions.larger)),
-                Space(Dimensions.larger),
+                    radius: Dimension.larger,
+                    width: Dimension.larger,
+                    child: Space(Dimension.larger)),
+                Space(Dimension.larger),
                 Outlined(
-                  radius: DimensionToken.large,
-                  width: DimensionToken.large,
-                  child: Space(Dimensions.large),
+                  radius: Dimension.large,
+                  width: Dimension.large,
+                  child: Space(Dimension.large),
                 ),
-                Space(Dimensions.large),
+                Space(Dimension.large),
                 Outlined(
-                  radius: DimensionToken.medium,
-                  width: DimensionToken.medium,
-                  child: Space(Dimensions.medium),
+                  radius: Dimension.medium,
+                  width: Dimension.medium,
+                  child: Space(Dimension.medium),
                 ),
-                Space(Dimensions.medium),
+                Space(Dimension.medium),
                 Outlined(
-                  radius: DimensionToken.small,
-                  width: DimensionToken.small,
-                  child: Space(Dimensions.small),
+                  radius: Dimension.small,
+                  width: Dimension.small,
+                  child: Space(Dimension.small),
                 ),
-                Space(Dimensions.small),
+                Space(Dimension.small),
                 Outlined(
-                  radius: DimensionToken.smaller,
-                  width: DimensionToken.smaller,
-                  child: Space(Dimensions.smaller),
+                  radius: Dimension.smaller,
+                  width: Dimension.smaller,
+                  child: Space(Dimension.smaller),
                 ),
-                Space(Dimensions.smaller),
+                Space(Dimension.smaller),
                 Outlined(
-                  radius: DimensionToken.smallest,
-                  width: DimensionToken.smallest,
-                  child: Space(Dimensions.smallest),
+                  radius: Dimension.smallest,
+                  width: Dimension.smallest,
+                  child: Space(Dimension.smallest),
                 ),
               ],
             ),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class Outlined extends StatelessWidget {
+  const Outlined({
+    super.key,
+    required this.child,
+    this.width,
+    this.radius,
+  });
+
+  final Widget child;
+  final Dimension? width;
+  final Dimension? radius;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.black,
+          width: Dimensions.of(context).get(width ?? Dimension.small),
+        ),
+        borderRadius: BorderRadius.circular(
+          Dimensions.of(context).get(radius ?? Dimension.small),
+        ),
+      ),
+      child: child,
+    );
+  }
+}
+
+class OutlinedPadding extends StatelessWidget {
+  const OutlinedPadding({
+    super.key,
+    required this.padding,
+  });
+
+  final EdgeInsetsGeometry padding;
+
+  @override
+  Widget build(BuildContext context) {
+    return Outlined(
+      child: Padding(
+        padding: padding,
+        child: Container(
+          color: const Color.fromARGB(255, 194, 194, 194),
+          height: 50,
+          width: 50,
         ),
       ),
     );

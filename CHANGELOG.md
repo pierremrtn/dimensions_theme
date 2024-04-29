@@ -1,3 +1,10 @@
+## 0.1.0
+- **Breaking** Migrate to dart 3
+- **Breaking** Dimensions theme extension no longer enforce pre-defined token
+- **Breaking** Deprecated `Space[Token]` widgets have been removed
+- Added `SpaceDimensionsMixin` for construct `Space` widgets from user-defined dimension token
+- Added `BuildContext` extension for padding and borderRadius
+
 ## 0.0.3
 - Introduce `Space(DimensionToken token)` widget
 - `Space[token]` widgets are now deprecated in favor of the new Space widget.

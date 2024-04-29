@@ -3,36 +3,11 @@
 
 library dimensions_theme;
 
-export 'src/dimensions_theme.dart'
-    show
-        SpaceDimensions,
-        BorderWidthDimensions,
-        InsetDimensions,
-        RadiusDimensions,
-        Dimensions,
-        DimensionToken;
+export 'src/dimensions_theme.dart' show Dimensions;
 
-export 'src/edge_insets_utils.dart'
-    show
-        EdgeInsetsOf,
-        EdgeInsetsBuilder,
-        EdgeInsetsLargest,
-        EdgeInsetsLarger,
-        EdgeInsetsLarge,
-        EdgeInsetsMedium,
-        EdgeInsetsSmall,
-        EdgeInsetsSmaller,
-        EdgeInsetsSmallest;
+export 'src/edge_insets_utils.dart' show EdgeInsetsOf, PaddingThemeExtension;
 
-export 'src/space_widgets.dart'
-    show
-        Space,
-        SpaceLargest,
-        SpaceLarger,
-        SpaceLarge,
-        SpaceMedium,
-        SpaceSmall,
-        SpaceSmaller,
-        SpaceSmallest;
+export 'src/space_widgets.dart' show Space, SpaceDimensionsMixin;
 
-export 'src/radius_utils.dart' show RadiusOf;
+export 'src/radius_utils.dart'
+    show RadiusOf, BorderRadiusOf, RadiusThemeExtension;

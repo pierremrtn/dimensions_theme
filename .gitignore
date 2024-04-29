@@ -12,3 +12,5 @@ pubspec.lock
 .vscode
 
 test
+
+.DS_Store

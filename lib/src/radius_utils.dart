@@ -9,22 +9,37 @@ class RadiusOf {
 
   /// Construct a circular [Radius] with value set to the corresponding dimension
   /// from the dimensions theme of given context
-  Radius circular(DimensionToken dimension) {
+  Radius circular(Object dimensionsToken) {
     return Radius.circular(
-      Dimensions.of(context).radii.get(dimension),
+      Dimensions.of(context).get(dimensionsToken),
     );
   }
 
   /// Construct an elliptical [Radius] with value set to the corresponding dimension
   /// from the dimensions theme of given context
   Radius elliptical(
-    DimensionToken x,
-    DimensionToken y,
+    Object x,
+    Object y,
   ) {
-    final radiusDimensions = Dimensions.of(context).radii;
+    final radiusDimensions = Dimensions.of(context);
     return Radius.elliptical(
       radiusDimensions.get(x),
       radiusDimensions.get(y),
     );
   }
+}
+
+class BorderRadiusOf {
+  const BorderRadiusOf(this.context);
+
+  final BuildContext context;
+
+  BorderRadius circular(Object dimensionsToken) => BorderRadius.all(
+        RadiusOf(context).circular(dimensionsToken),
+      );
+}
+
+extension RadiusThemeExtension on BuildContext {
+  RadiusOf get radius => RadiusOf(this);
+  BorderRadiusOf get borderRadius => BorderRadiusOf(this);
 }
